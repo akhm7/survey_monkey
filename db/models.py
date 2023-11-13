@@ -1,11 +1,11 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Enum
 from sqlalchemy.orm import relationship, declarative_base
 from sqlalchemy.sql import func
-from enum import Enum
+from enum import Enum as PyEnum
 
 Base = declarative_base()
 
-class QuestionType(Enum):
+class QuestionType(PyEnum):
     TEXT = 'text'
     SINGLE_CHOICE = 'single_choice'
     MULTIPLE_CHOICE = 'multiple_choice'
