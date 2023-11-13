@@ -40,6 +40,13 @@ class Question(Base):
     survey = relationship('Survey', back_populates='questions')
     answers = relationship('Answer', back_populates='question')
 
+class AnswerOption(Base):
+    __tablename__ = "answer_options"
+
+    id = Column(Integer, primary_key=True, index=True)
+    question_id = Column(Integer, ForeignKey("questions.id"))
+    text = Column(String)
+
 class Answer(Base):
     __tablename__ = 'answers'
 
